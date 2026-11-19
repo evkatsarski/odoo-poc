@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="decimal_leather_area" model="decimal.precision">
+        <field name="name">Leather Area</field>
+        <field name="digits">3</field>
+    </record>
+</odoo>

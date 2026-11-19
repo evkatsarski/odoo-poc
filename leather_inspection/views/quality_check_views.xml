@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="quality_check_view_form_leather_inspection" model="ir.ui.view">
+        <field name="name">quality.check.form.leather.inspection</field>
+        <field name="model">quality.check</field>
+        <field name="inherit_id" ref="quality_control.quality_check_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//header" position="inside">
+                <button name="action_open_leather_inspection" type="object"
+                    string="Leather Inspection" class="btn-secondary"
+                    groups="leather_inspection.group_leather_inspection_operator"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

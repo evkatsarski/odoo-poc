@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="res.groups.privilege" id="res_groups_privilege_leather_inspection">
+        <field name="name">Leather Inspection</field>
+        <field name="sequence">28</field>
+        <field name="category_id" ref="base.module_category_supply_chain"/>
+    </record>
+
+    <record id="group_leather_inspection_data_entry" model="res.groups">
+        <field name="name">Data Entry</field>
+        <field name="sequence">10</field>
+        <field name="privilege_id" ref="res_groups_privilege_leather_inspection"/>
+        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        <field name="comment">Sees and edits only inspections assigned to them. Cannot create or delete inspections, and is not an inventory user.</field>
+    </record>
+
+    <record id="group_leather_inspection_operator" model="res.groups">
+        <field name="name">Module Operator</field>
+        <field name="sequence">20</field>
+        <field name="privilege_id" ref="res_groups_privilege_leather_inspection"/>
+        <field name="implied_ids" eval="[
+            (4, ref('group_leather_inspection_data_entry')),
+            (4, ref('stock.group_stock_user')),
+            (4, ref('stock.group_production_lot')),
+            (4, ref('quality.group_quality_user')),
+        ]"/>
+        <field name="comment">Sees in-company inspections, assigns data-entry users, and reviews submissions. Inventory read comes from Inventory / User, not from a custom stock rule.</field>
+    </record>
+
+    <record id="group_leather_inspection_admin" model="res.groups">
+        <field name="name">Administrator</field>
+        <field name="sequence">30</field>
+        <field name="privilege_id" ref="res_groups_privilege_leather_inspection"/>
+        <field name="implied_ids" eval="[(4, ref('group_leather_inspection_operator'))]"/>
+        <field name="user_ids" eval="[(4, ref('base.user_admin'))]"/>
+        <field name="comment">Same inspection workflow as the module operator, plus delete. User accounts are still managed with Administration / Settings.</field>
+    </record>
+</odoo>

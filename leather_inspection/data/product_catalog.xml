@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <!-- Fifteen synthetic SKUs. Hides are lot-tracked units. Area in m² is an inspection measurement, not the stock quantity. -->
+    <record id="product_hide_calfskin" model="product.template">
+        <field name="name">Calfskin hide</field>
+        <field name="default_code">HIDE-CALF</field>
+        <field name="type">consu</field>
+        <field name="is_storable" eval="True"/>
+        <field name="tracking">lot</field>
+        <field name="uom_id" ref="uom.product_uom_unit"/>
+        <field name="categ_id" ref="product.product_category_goods"/>
+    </record>
+    <record id="product_hide_lambskin" model="product.template">
+        <field name="name">Lambskin hide</field>
+        <field name="default_code">HIDE-LAMB</field>
+        <field name="type">consu</field>
+        <field name="is_storable" eval="True"/>
+        <field name="tracking">lot</field>
+        <field name="uom_id" ref="uom.product_uom_unit"/>
+        <field name="categ_id" ref="product.product_category_goods"/>
+    </record>
+    <record id="product_lining" model="product.template">
+        <field name="name">Cotton lining</field>
+        <field name="default_code">LINING</field>
+        <field name="type">consu</field>
+        <field name="is_storable" eval="True"/>
+        <field name="uom_id" ref="uom.product_uom_unit"/>
+        <field name="categ_id" ref="product.product_category_goods"/>
+    </record>
+    <record id="product_hardware" model="product.template">
+        <field name="name">Brass hardware kit</field>
+        <field name="default_code">HARDWARE</field>
+        <field name="type">consu</field>
+        <field name="is_storable" eval="True"/>
+        <field name="uom_id" ref="uom.product_uom_unit"/>
+        <field name="categ_id" ref="product.product_category_goods"/>
+    </record>
+    <record id="product_thread" model="product.template">
+        <field name="name">Waxed thread</field>
+        <field name="default_code">THREAD</field>
+        <field name="type">consu</field>
+        <field name="is_storable" eval="True"/>
+        <field name="uom_id" ref="uom.product_uom_unit"/>
+        <field name="categ_id" ref="product.product_category_goods"/>
+    </record>
+    <record id="product_edge_paint" model="product.template">
+        <field name="name">Edge paint</field>
+        <field name="default_code">EDGE</field>
+        <field name="type">consu</field>
+        <field name="is_storable" eval="True"/>
+        <field name="uom_id" ref="uom.product_uom_unit"/>
+        <field name="categ_id" ref="product.product_category_goods"/>
+    </record>
+    <record id="product_zipper" model="product.template">
+        <field name="name">Metal zipper</field>
+        <field name="default_code">ZIPPER</field>
+        <field name="type">consu</field>
+        <field name="is_storable" eval="True"/>
+        <field name="uom_id" ref="uom.product_uom_unit"/>
+        <field name="categ_id" ref="product.product_category_goods"/>
+    </record>
+    <record id="product_dust_bag" model="product.template">
+        <field name="name">Dust bag</field>
+        <field name="default_code">DUST</field>
+        <field name="type">consu</field>
+        <field name="is_storable" eval="True"/>
+        <field name="uom_id" ref="uom.product_uom_unit"/>
+        <field name="categ_id" ref="product.product_category_goods"/>
+    </record>
+    <record id="product_box" model="product.template">
+        <field name="name">Gift box</field>
+        <field name="default_code">BOX</field>
+        <field name="type">consu</field>
+        <field name="is_storable" eval="True"/>
+        <field name="uom_id" ref="uom.product_uom_unit"/>
+        <field name="categ_id" ref="product.product_category_goods"/>
+    </record>
+    <record id="product_tote" model="product.template">
+        <field name="name">Demo tote bag</field>
+        <field name="default_code">TOTE</field>
+        <field name="type">consu</field>
+        <field name="is_storable" eval="True"/>
+        <field name="uom_id" ref="uom.product_uom_unit"/>
+        <field name="categ_id" ref="product.product_category_goods"/>
+        <field name="sale_ok" eval="True"/>
+    </record>
+    <record id="product_card_holder" model="product.template">
+        <field name="name">Card holder</field>
+        <field name="default_code">CARD</field>
+        <field name="type">consu</field>
+        <field name="is_storable" eval="True"/>
+        <field name="uom_id" ref="uom.product_uom_unit"/>
+        <field name="categ_id" ref="product.product_category_goods"/>
+        <field name="sale_ok" eval="True"/>
+    </record>
+    <record id="product_belt" model="product.template">
+        <field name="name">Belt</field>
+        <field name="default_code">BELT</field>
+        <field name="type">consu</field>
+        <field name="is_storable" eval="True"/>
+        <field name="uom_id" ref="uom.product_uom_unit"/>
+        <field name="categ_id" ref="product.product_category_goods"/>
+        <field name="sale_ok" eval="True"/>
+    </record>
+    <record id="product_wallet" model="product.template">
+        <field name="name">Wallet</field>
+        <field name="default_code">WALLET</field>
+        <field name="type">consu</field>
+        <field name="is_storable" eval="True"/>
+        <field name="uom_id" ref="uom.product_uom_unit"/>
+        <field name="categ_id" ref="product.product_category_goods"/>
+        <field name="sale_ok" eval="True"/>
+    </record>
+    <record id="product_strap" model="product.template">
+        <field name="name">Strap</field>
+        <field name="default_code">STRAP</field>
+        <field name="type">consu</field>
+        <field name="is_storable" eval="True"/>
+        <field name="uom_id" ref="uom.product_uom_unit"/>
+        <field name="categ_id" ref="product.product_category_goods"/>
+        <field name="sale_ok" eval="True"/>
+    </record>
+    <record id="product_pouch" model="product.template">
+        <field name="name">Pouch</field>
+        <field name="default_code">POUCH</field>
+        <field name="type">consu</field>
+        <field name="is_storable" eval="True"/>
+        <field name="uom_id" ref="uom.product_uom_unit"/>
+        <field name="categ_id" ref="product.product_category_goods"/>
+        <field name="sale_ok" eval="True"/>
+    </record>
+</odoo>
