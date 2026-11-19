@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="leather_inspection_view_list" model="ir.ui.view">
+        <field name="name">leather.inspection.list</field>
+        <field name="model">leather.inspection</field>
+        <field name="arch" type="xml">
+            <list string="Leather Inspections" class="o_leather_inspection_list" create="1" sample="0">
+                <field name="name" string="Reference"/>
+                <field name="product_id"/>
+                <field name="lot_label" string="Lot"/>
+                <field name="picking_label" string="Receipt"/>
+                <field name="user_id" widget="many2one_avatar_user"/>
+                <field name="state" widget="badge"
+                    decoration-muted="state == 'draft'"
+                    decoration-warning="state == 'assigned'"
+                    decoration-info="state == 'submitted'"
+                    decoration-success="state == 'approved'"/>
+                <field name="measured_area" string="Measured area (m²)"/>
+                <field name="usable_area" string="Usable area (m²)"/>
+                <field name="grade"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="leather_inspection_view_form" model="ir.ui.view">
+        <field name="name">leather.inspection.form</field>
+        <field name="model">leather.inspection</field>
+        <field name="arch" type="xml">
+            <form string="Leather Inspection" class="o_leather_inspection_form">
+                <header>
+                    <button name="action_open_assign_wizard" type="object" string="Assign"
+                        class="oe_highlight" data-hotkey="a"
+                        invisible="state != 'draft'"
+                        groups="leather_inspection.group_leather_inspection_operator"/>
+                    <button name="action_submit" type="object" string="Submit for Review"
+                        class="oe_highlight" data-hotkey="s"
+                        invisible="state != 'assigned' or user_id != uid"/>
+                    <button name="action_approve" type="object" string="Approve"
+                        class="oe_highlight" data-hotkey="v"
+                        invisible="state != 'submitted'"
+                        groups="leather_inspection.group_leather_inspection_operator"/>
+                    <button name="action_open_return_wizard" type="object" string="Return for Correction"
+                        data-hotkey="r"
+                        invisible="state != 'submitted'"
+                        groups="leather_inspection.group_leather_inspection_operator"/>
+                    <field name="state" widget="statusbar" readonly="1"
+                        statusbar_visible="draft,assigned,submitted,approved"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name"/>
+                        <h1><field name="name" readonly="1"/></h1>
+                    </div>
+                    <group string="Reference">
+                        <group>
+                            <field name="product_id" readonly="1"/>
+                            <field name="lot_id" readonly="1"
+                                groups="leather_inspection.group_leather_inspection_operator"/>
+                            <field name="lot_label" readonly="1"
+                                groups="!leather_inspection.group_leather_inspection_operator"/>
+                            <field name="picking_id" readonly="1"
+                                groups="leather_inspection.group_leather_inspection_operator"/>
+                            <field name="picking_label" readonly="1"
+                                groups="!leather_inspection.group_leather_inspection_operator"/>
+                        </group>
+                        <group>
+                            <field name="quality_check_id" readonly="1"
+                                groups="leather_inspection.group_leather_inspection_operator"/>
+                            <field name="quality_check_label" readonly="1"
+                                groups="!leather_inspection.group_leather_inspection_operator"/>
+                            <field name="user_id" readonly="1" widget="many2one_avatar_user"/>
+                            <field name="company_id" readonly="1" groups="base.group_multi_company"/>
+                            <field name="move_line_id" readonly="1"
+                                groups="leather_inspection.group_leather_inspection_operator"/>
+                        </group>
+                    </group>
+                    <group string="Inspection Results">
+                        <group>
+                            <field name="measured_area" string="Measured area (m²)"
+                                readonly="state != 'assigned' or user_id != uid"/>
+                            <field name="grade"
+                                readonly="state != 'assigned' or user_id != uid"/>
+                        </group>
+                        <group>
+                            <field name="usable_area" string="Usable area (m²)"
+                                readonly="state != 'assigned' or user_id != uid"/>
+                            <field name="shade"
+                                readonly="state != 'assigned' or user_id != uid"/>
+                        </group>
+                        <field name="zero_usable_confirmed"
+                            readonly="state != 'assigned' or user_id != uid"/>
+                        <field name="defect_notes" colspan="2" placeholder="Plain-text notes about defects"
+                            readonly="state != 'assigned' or user_id != uid"/>
+                    </group>
+                    <group string="Review" invisible="not return_reason and state != 'approved'">
+                        <field name="return_reason" readonly="1" invisible="not return_reason"/>
+                        <field name="reviewer_id" readonly="1" invisible="state != 'approved'"/>
+                        <field name="review_date" readonly="1" invisible="state != 'approved'"/>
+                    </group>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="leather_inspection_view_search" model="ir.ui.view">
+        <field name="name">leather.inspection.search</field>
+        <field name="model">leather.inspection</field>
+        <field name="arch" type="xml">
+            <search string="Leather Inspections">
+                <field name="name" string="Reference"/>
+                <field name="product_id"/>
+                <field name="lot_label" string="Lot"/>
+                <field name="lot_id" groups="leather_inspection.group_leather_inspection_operator"/>
+                <filter name="my_assigned" string="My Assigned Inspections"
+                    domain="[('user_id', '=', uid)]"/>
+                <separator/>
+                <filter name="draft" string="Draft" domain="[('state', '=', 'draft')]"/>
+                <filter name="assigned" string="Assigned" domain="[('state', '=', 'assigned')]"/>
+                <filter name="submitted" string="Submitted" domain="[('state', '=', 'submitted')]"/>
+                <filter name="approved" string="Approved" domain="[('state', '=', 'approved')]"/>
+                <group>
+                    <filter name="group_state" string="Status" domain="[]" context="{'group_by': 'state'}"/>
+                    <filter name="group_user" string="Assigned User" domain="[]" context="{'group_by': 'user_id'}"/>
+                    <filter name="group_product" string="Product" domain="[]" context="{'group_by': 'product_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_leather_inspection" model="ir.actions.act_window">
+        <field name="name">Leather Inspections</field>
+        <field name="res_model">leather.inspection</field>
+        <field name="view_mode">list,form</field>
+        <field name="path">leather-inspections</field>
+        <field name="search_view_id" ref="leather_inspection_view_search"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">No leather inspections yet</p>
+            <p>Create a draft from an incoming quality check and a leather lot. Submitting or approving an inspection does not change stock.</p>
+        </field>
+    </record>
+</odoo>

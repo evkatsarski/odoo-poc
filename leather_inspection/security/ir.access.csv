@@ -1,0 +1,7 @@
+id,name,model_id,group_id/id,operation,domain
+access_leather_inspection_data_entry,leather.inspection data entry,leather.inspection,leather_inspection.group_leather_inspection_data_entry,ru,"[('user_id', '=', user.id)]"
+access_leather_inspection_operator,leather.inspection operator,leather.inspection,leather_inspection.group_leather_inspection_operator,cru,"[('company_id', 'in', company_ids)]"
+access_leather_inspection_admin,leather.inspection administrator,leather.inspection,leather_inspection.group_leather_inspection_admin,crud,"[('company_id', 'in', company_ids)]"
+access_leather_inspection_company,leather.inspection company restriction,leather.inspection,,crud,"[('company_id', 'in', company_ids)]"
+access_leather_assign_wizard_operator,leather.inspection.assign.wizard operator,leather.inspection.assign.wizard,leather_inspection.group_leather_inspection_operator,crud,
+access_leather_return_wizard_operator,leather.inspection.return.wizard operator,leather.inspection.return.wizard,leather_inspection.group_leather_inspection_operator,crud,

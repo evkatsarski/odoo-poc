@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Data-entry users are not Inventory users and are not given the Quality app group.
+         This menu is their workspace. Operators see it too, because that group implies Data Entry. -->
+    <menuitem id="menu_leather_inspection_root"
+        name="Leather Inspections"
+        action="action_leather_inspection"
+        sequence="156"
+        groups="leather_inspection.group_leather_inspection_data_entry"/>
+
+    <!-- Quality → Leather Inspections for operators and administrators. -->
+    <menuitem id="menu_leather_inspection_quality"
+        name="Leather Inspections"
+        parent="quality_control.menu_quality_root"
+        action="action_leather_inspection"
+        sequence="25"
+        groups="leather_inspection.group_leather_inspection_operator"/>
+</odoo>
