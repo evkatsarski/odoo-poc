@@ -1,0 +1,955 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* leather_inspection
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 20.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-20 08:46+0000\n"
+"PO-Revision-Date: 2026-11-20 10:00+0000\n"
+"Last-Translator: \n"
+"Language-Team: Bulgarian\n"
+"Language: bg\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: leather_inspection
+#: model:ir.module.module,description:base.module_leather_inspection
+msgid ""
+"\n"
+"Incoming leather inspection that stays beside standard Odoo Quality, Inventory,\n"
+"and Manufacturing. Inspection actions record measurements only. They do not\n"
+"post stock, rewrite lot quantities, consume leather, or pass the quality check.\n"
+msgstr ""
+"\n"
+"Входяща инспекция на кожа към стандартните приложения Качество, Склад\n"
+"и Производство на Odoo. Действията по инспекцията записват само измервания. Те не\n"
+"осчетоводяват наличност, не презаписват количествата по партиди, не изразходват кожа и не маркират проверката на качеството като успешна.\n"
+
+#. module: leather_inspection
+#. odoo-python
+#: code:addons/leather_inspection/models/leather_inspection.py:0
+msgid "A company is required."
+msgstr "Фирмата е задължителна."
+
+#. module: leather_inspection
+#. odoo-python
+#: code:addons/leather_inspection/models/leather_inspection.py:0
+msgid "A correction reason is required to return this inspection."
+msgstr "За да върнете тази инспекция, е нужна причина за корекция."
+
+#. module: leather_inspection
+#. odoo-python
+#: code:addons/leather_inspection/models/leather_inspection.py:0
+msgid "A leather lot is required."
+msgstr "Партидата кожа е задължителна."
+
+#. module: leather_inspection
+#. odoo-python
+#: code:addons/leather_inspection/models/leather_inspection.py:0
+msgid "A quality check is required."
+msgstr "Проверката на качеството е задължителна."
+
+#. module: leather_inspection
+#: model:ir.model.fields,field_description:leather_inspection.field_leather_inspection__message_needaction
+msgid "Action Needed"
+msgstr "Необходимо Действие"
+
+#. module: leather_inspection
+#: model:ir.model.fields,field_description:leather_inspection.field_leather_inspection__activity_ids
+msgid "Activities"
+msgstr "Дейности"
+
+#. module: leather_inspection
+#: model:ir.model.fields,field_description:leather_inspection.field_leather_inspection__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "Декорация за изключение на дейност"
+
+#. module: leather_inspection
+#: model:ir.model.fields,field_description:leather_inspection.field_leather_inspection__activity_plans_ids
+msgid "Activity Plans"
+msgstr "Планове за дейност"
+
+#. module: leather_inspection
+#: model:ir.model.fields,field_description:leather_inspection.field_leather_inspection__activity_state
+msgid "Activity State"
+msgstr "Състояние на Дейност"
+
+#. module: leather_inspection
+#: model:ir.model.fields,field_description:leather_inspection.field_leather_inspection__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "Икона за Вид Дейност"
+
+#. module: leather_inspection
+#: model:res.groups,name:leather_inspection.group_leather_inspection_admin
+msgid "Administrator"
+msgstr "Администратор"
+
+#. module: leather_inspection
+#: model:ir.model.fields,field_description:leather_inspection.field_leather_inspection_assign_wizard__allowed_user_ids
+msgid "Allowed User"
+msgstr "Разрешен потребител"
+
+#. module: leather_inspection
+#: model:ir.model.constraint,message:leather_inspection.constraint_leather_inspection_company_check_lot_uniq
+msgid ""
+"An inspection already exists for this company, quality check, and leather "
+"lot."
+msgstr ""
+"Вече има инспекция за тази фирма, тази проверка на качеството и тази партида"
+" кожа."
+
+#. module: leather_inspection
+#. odoo-python
+#: code:addons/leather_inspection/models/leather_inspection.py:0
+#: model_terms:ir.ui.view,arch_db:leather_inspection.leather_inspection_view_form
+msgid "Approve"
+msgstr "Одобри"
+
+#. module: leather_inspection
+#: model:ir.model.fields.selection,name:leather_inspection.selection__leather_inspection__state__approved
+#: model_terms:ir.ui.view,arch_db:leather_inspection.leather_inspection_view_search
+msgid "Approved"
+msgstr "Одобрена"
+
+#. module: leather_inspection
+#. odoo-python
+#: code:addons/leather_inspection/models/leather_inspection.py:0
+#: model_terms:ir.ui.view,arch_db:leather_inspection.leather_inspection_assign_wizard_view_form
+#: model_terms:ir.ui.view,arch_db:leather_inspection.leather_inspection_view_form
+msgid "Assign"
+msgstr "Възложи"
+
+#. module: leather_inspection
+#: model:ir.model,name:leather_inspection.model_leather_inspection_assign_wizard
+msgid "Assign Leather Inspection"
+msgstr "Възлагане на инспекция на кожа"
+
+#. module: leather_inspection
+#. odoo-python
+#: code:addons/leather_inspection/models/leather_inspection.py:0
+msgid "Assign the inspection to a user in Leather Inspection / Data Entry."
+msgstr ""
+"Възложете инспекцията на потребител от „Инспекция на кожа / Въвеждане на "
+"данни“."
+
+#. module: leather_inspection
+#: model:ir.model.fields.selection,name:leather_inspection.selection__leather_inspection__state__assigned
+#: model_terms:ir.ui.view,arch_db:leather_inspection.leather_inspection_view_search
+msgid "Assigned"
+msgstr "Възложена"
+
+#. module: leather_inspection
+#: model:ir.model.fields,field_description:leather_inspection.field_leather_inspection__user_id
+#: model_terms:ir.ui.view,arch_db:leather_inspection.leather_inspection_view_search
+msgid "Assigned User"
+msgstr "Възложен потребител"
+
+#. module: leather_inspection
+#: model:ir.model.fields,field_description:leather_inspection.field_leather_inspection__message_attachment_count
+msgid "Attachment Count"
+msgstr "Брой Прикачени Файлове"
+
+#. module: leather_inspection
+#: model:product.template,name:leather_inspection.product_belt
+msgid "Belt"
+msgstr "Колан"
+
+#. module: leather_inspection
+#: model:product.template,name:leather_inspection.product_hardware
+msgid "Brass hardware kit"
+msgstr "Комплект месингов обков"
+
+#. module: leather_inspection
+#: model:product.template,name:leather_inspection.product_hide_calfskin
+msgid "Calfskin hide"
+msgstr "Телешка кожа"
+
+#. module: leather_inspection
+#: model_terms:ir.ui.view,arch_db:leather_inspection.leather_inspection_assign_wizard_view_form
+#: model_terms:ir.ui.view,arch_db:leather_inspection.leather_inspection_return_wizard_view_form
+msgid "Cancel"
+msgstr "Отказ"
+
+#. module: leather_inspection
+#: model:product.template,name:leather_inspection.product_card_holder
+msgid "Card holder"
+msgstr "Калъф за карти"
+
+#. module: leather_inspection
+#. odoo-python
+#: code:addons/leather_inspection/models/leather_inspection.py:0
+msgid "Choose a data-entry user to assign."
+msgstr ""
+"Изберете потребител за въвеждане на данни, на когото да възложите "
+"инспекцията."
+
+#. module: leather_inspection
+#: model:ir.model.fields,field_description:leather_inspection.field_leather_inspection__company_id
+#: model:ir.model.fields,field_description:leather_inspection.field_leather_inspection_assign_wizard__company_id
+msgid "Company"
+msgstr "Фирма"
+
+#. module: leather_inspection
+#: model:ir.model.fields,field_description:leather_inspection.field_leather_inspection_return_wizard__reason
+msgid "Correction reason"
+msgstr "Причина за корекция"
+
+#. module: leather_inspection
+#: model:product.template,name:leather_inspection.product_lining
+msgid "Cotton lining"
+msgstr "Памучна подплата"
+
+#. module: leather_inspection
+#: model_terms:ir.actions.act_window,help:leather_inspection.action_leather_inspection
+msgid ""
+"Create a draft from an incoming quality check and a leather lot. Submitting "
+"or approving an inspection does not change stock."
+msgstr ""
+"Създайте чернова от входяща проверка на качеството и партида кожа. "
+"Изпращането или одобряването на инспекция не променя наличността."
+
+#. module: leather_inspection
+#: model:ir.model.fields,field_description:leather_inspection.field_leather_inspection__create_uid
+#: model:ir.model.fields,field_description:leather_inspection.field_leather_inspection_assign_wizard__create_uid
+#: model:ir.model.fields,field_description:leather_inspection.field_leather_inspection_return_wizard__create_uid
+msgid "Created by"
+msgstr "Създадено от"
+
+#. module: leather_inspection
+#: model:ir.model.fields,field_description:leather_inspection.field_leather_inspection__create_date
+#: model:ir.model.fields,field_description:leather_inspection.field_leather_inspection_assign_wizard__create_date
+#: model:ir.model.fields,field_description:leather_inspection.field_leather_inspection_return_wizard__create_date
+msgid "Created on"
+msgstr "Създадено на"
+
+#. module: leather_inspection
+#: model:res.groups,name:leather_inspection.group_leather_inspection_data_entry
+msgid "Data Entry"
+msgstr "Въвеждане на данни"
+
+#. module: leather_inspection
+#: model:ir.model.fields,field_description:leather_inspection.field_leather_inspection_assign_wizard__user_id
+msgid "Data-entry user"
+msgstr "Потребител за въвеждане на данни"
+
+#. module: leather_inspection
+#: model:ir.model.fields,field_description:leather_inspection.field_leather_inspection__defect_notes
+msgid "Defect Notes"
+msgstr "Бележки за дефекти"
+
+#. module: leather_inspection
+#: model:product.template,name:leather_inspection.product_tote
+msgid "Demo tote bag"
+msgstr "Демонстрационна чанта"
+
+#. module: leather_inspection
+#: model:ir.model.fields,field_description:leather_inspection.field_leather_inspection__display_name
+#: model:ir.model.fields,field_description:leather_inspection.field_leather_inspection_assign_wizard__display_name
+#: model:ir.model.fields,field_description:leather_inspection.field_leather_inspection_return_wizard__display_name
+#: model:ir.model.fields,field_description:leather_inspection.field_quality_check__display_name
+msgid "Display Name"
+msgstr "Име за показване"
+
+#. module: leather_inspection
+#: model:ir.model.fields.selection,name:leather_inspection.selection__leather_inspection__state__draft
+#: model_terms:ir.ui.view,arch_db:leather_inspection.leather_inspection_view_search
+msgid "Draft"
+msgstr "Чернова"
+
+#. module: leather_inspection
+#: model:product.template,name:leather_inspection.product_dust_bag
+msgid "Dust bag"
+msgstr "Торбичка за съхранение"
+
+#. module: leather_inspection
+#: model:product.template,name:leather_inspection.product_edge_paint
+msgid "Edge paint"
+msgstr "Боя за ръбове"
+
+#. module: leather_inspection
+#: model:ir.model.fields,field_description:leather_inspection.field_leather_inspection__message_follower_ids
+msgid "Followers"
+msgstr "Последователи"
+
+#. module: leather_inspection
+#: model:ir.model.fields,field_description:leather_inspection.field_leather_inspection__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Последователи (партньори)"
+
+#. module: leather_inspection
+#: model:product.template,name:leather_inspection.product_box
+msgid "Gift box"
+msgstr "Подаръчна кутия"
+
+#. module: leather_inspection
+#: model:ir.model.fields,field_description:leather_inspection.field_leather_inspection__grade
+msgid "Grade"
+msgstr "Клас"
+
+#. module: leather_inspection
+#: model:ir.model.fields.selection,name:leather_inspection.selection__leather_inspection__grade__a
+msgid "Grade A"
+msgstr "Клас A"
+
+#. module: leather_inspection
+#: model:ir.model.fields.selection,name:leather_inspection.selection__leather_inspection__grade__b
+msgid "Grade B"
+msgstr "Клас B"
+
+#. module: leather_inspection
+#: model:ir.model.fields.selection,name:leather_inspection.selection__leather_inspection__grade__c
+msgid "Grade C"
+msgstr "Клас C"
+
+#. module: leather_inspection
+#. odoo-python
+#: code:addons/leather_inspection/models/leather_inspection.py:0
+msgid "Grade is required before submission."
+msgstr "Класът е задължителен преди изпращане."
+
+#. module: leather_inspection
+#: model:ir.model.fields,field_description:leather_inspection.field_leather_inspection__has_message
+msgid "Has Message"
+msgstr "Има съобщение"
+
+#. module: leather_inspection
+#: model:ir.model.fields,field_description:leather_inspection.field_leather_inspection__id
+#: model:ir.model.fields,field_description:leather_inspection.field_leather_inspection_assign_wizard__id
+#: model:ir.model.fields,field_description:leather_inspection.field_leather_inspection_return_wizard__id
+#: model:ir.model.fields,field_description:leather_inspection.field_quality_check__id
+msgid "ID"
+msgstr "ID"
+
+#. module: leather_inspection
+#: model:ir.model.fields,field_description:leather_inspection.field_leather_inspection__activity_exception_icon
+msgid "Icon"
+msgstr "Икона"
+
+#. module: leather_inspection
+#: model:ir.model.fields,help:leather_inspection.field_leather_inspection__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "Икона за обозначаване на дейност с изключение."
+
+#. module: leather_inspection
+#: model:ir.model.fields,help:leather_inspection.field_leather_inspection__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "Ако е отметнато, новите съобщения ще изискват внимание."
+
+#. module: leather_inspection
+#: model:ir.model.fields,help:leather_inspection.field_leather_inspection__message_has_error
+#: model:ir.model.fields,help:leather_inspection.field_leather_inspection__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Ако е отметнато, някои съобщения имат грешка при доставката."
+
+#. module: leather_inspection
+#. odoo-python
+#: code:addons/leather_inspection/models/leather_inspection.py:0
+msgid "Incoming leather inspection"
+msgstr "Входяща инспекция на кожа"
+
+#. module: leather_inspection
+#: model:ir.module.module,summary:base.module_leather_inspection
+msgid "Incoming leather lot inspection for a luxury leather-goods workshop"
+msgstr ""
+"Входяща инспекция на партиди кожа за ателие за луксозни кожени изделия"
+
+#. module: leather_inspection
+#: model:ir.model.fields,field_description:leather_inspection.field_leather_inspection_assign_wizard__inspection_id
+#: model:ir.model.fields,field_description:leather_inspection.field_leather_inspection_return_wizard__inspection_id
+msgid "Inspection"
+msgstr "Инспекция"
+
+#. module: leather_inspection
+#. odoo-python
+#: code:addons/leather_inspection/models/leather_inspection.py:0
+msgid ""
+"Inspection %(name)s is %(state)s. %(action)s is only available from "
+"%(expected)s."
+msgstr ""
+"Инспекция %(name)s е в състояние „%(state)s“. „%(action)s“ е налично само от"
+" %(expected)s."
+
+#. module: leather_inspection
+#: model_terms:ir.ui.view,arch_db:leather_inspection.leather_inspection_view_form
+msgid "Inspection Results"
+msgstr "Резултати от инспекцията"
+
+#. module: leather_inspection
+#: model:ir.model.fields,field_description:leather_inspection.field_leather_inspection__message_is_follower
+msgid "Is Follower"
+msgstr "е последовател"
+
+#. module: leather_inspection
+#: model:product.template,name:leather_inspection.product_hide_lambskin
+msgid "Lambskin hide"
+msgstr "Агнешка кожа"
+
+#. module: leather_inspection
+#: model:ir.model.fields,field_description:leather_inspection.field_leather_inspection__write_uid
+#: model:ir.model.fields,field_description:leather_inspection.field_leather_inspection_assign_wizard__write_uid
+#: model:ir.model.fields,field_description:leather_inspection.field_leather_inspection_return_wizard__write_uid
+msgid "Last Updated by"
+msgstr "Последно актуализирано от"
+
+#. module: leather_inspection
+#: model:ir.model.fields,field_description:leather_inspection.field_leather_inspection__write_date
+#: model:ir.model.fields,field_description:leather_inspection.field_leather_inspection_assign_wizard__write_date
+#: model:ir.model.fields,field_description:leather_inspection.field_leather_inspection_return_wizard__write_date
+msgid "Last Updated on"
+msgstr "Последно актуализирано на"
+
+#. module: leather_inspection
+#: model:ir.model,name:leather_inspection.model_leather_inspection
+#: model:ir.module.module,shortdesc:base.module_leather_inspection
+#: model:res.groups.privilege,name:leather_inspection.res_groups_privilege_leather_inspection
+#: model_terms:ir.ui.view,arch_db:leather_inspection.leather_inspection_view_form
+#: model_terms:ir.ui.view,arch_db:leather_inspection.quality_check_view_form_leather_inspection
+msgid "Leather Inspection"
+msgstr "Инспекция на кожа"
+
+#. module: leather_inspection
+#: model:ir.actions.act_window,name:leather_inspection.action_leather_inspection
+#: model:ir.model.fields,field_description:leather_inspection.field_quality_check__leather_inspection_count
+#: model:ir.model.fields,field_description:leather_inspection.field_quality_check__leather_inspection_ids
+#: model:ir.ui.menu,name:leather_inspection.menu_leather_inspection_quality
+#: model:ir.ui.menu,name:leather_inspection.menu_leather_inspection_root
+#: model_terms:ir.ui.view,arch_db:leather_inspection.leather_inspection_view_list
+#: model_terms:ir.ui.view,arch_db:leather_inspection.leather_inspection_view_search
+msgid "Leather Inspections"
+msgstr "Инспекции на кожа"
+
+#. module: leather_inspection
+#. odoo-python
+#: code:addons/leather_inspection/models/leather_inspection.py:0
+msgid "Leather lot %(lot)s belongs to %(lot_company)s, not %(company)s."
+msgstr "Партидата кожа %(lot)s е към %(lot_company)s, а не към %(company)s."
+
+#. module: leather_inspection
+#. odoo-python
+#: code:addons/leather_inspection/models/leather_inspection.py:0
+msgid "Leather lot %(lot)s is for product %(lot_product)s, not %(product)s."
+msgstr ""
+"Партидата кожа %(lot)s е за продукт %(lot_product)s, а не за %(product)s."
+
+#. module: leather_inspection
+#. odoo-python
+#: code:addons/leather_inspection/models/leather_inspection.py:0
+msgid ""
+"Leather lot %(lot)s is for product %(lot_product)s, not quality check "
+"product %(check_product)s."
+msgstr ""
+"Партидата кожа %(lot)s е за продукт %(lot_product)s, а не за продукта от "
+"проверката на качеството %(check_product)s."
+
+#. module: leather_inspection
+#: model:ir.model.fields,field_description:leather_inspection.field_leather_inspection__lot_id
+#: model:ir.model.fields,field_description:leather_inspection.field_leather_inspection__lot_label
+#: model_terms:ir.ui.view,arch_db:leather_inspection.leather_inspection_view_list
+#: model_terms:ir.ui.view,arch_db:leather_inspection.leather_inspection_view_search
+msgid "Lot"
+msgstr "Партида"
+
+#. module: leather_inspection
+#. odoo-python
+#: code:addons/leather_inspection/models/leather_inspection.py:0
+msgid ""
+"Lot %(lot)s is not linked to quality check %(check)s or receipt %(picking)s."
+msgstr ""
+"Партида %(lot)s не е свързана с проверка на качеството %(check)s или с "
+"получаване %(picking)s."
+
+#. module: leather_inspection
+#. odoo-python
+#: code:addons/leather_inspection/models/leather_inspection.py:0
+msgid "Lot %(lot)s is not on a move line of incoming receipt %(picking)s."
+msgstr "Партида %(lot)s не е на ред от входящото получаване %(picking)s."
+
+#. module: leather_inspection
+#. odoo-python
+#: code:addons/leather_inspection/models/leather_inspection.py:0
+msgid "Lot %(lot)s is not one of the lots on quality check %(check)s."
+msgstr ""
+"Партида %(lot)s не е сред партидите на проверка на качеството %(check)s."
+
+#. module: leather_inspection
+#: model:ir.model.fields,help:leather_inspection.field_leather_inspection__activity_type_icon
+msgid "Material Symbols icon e.g. checklist"
+msgstr "Икона Material Symbols, напр. checklist"
+
+#. module: leather_inspection
+#: model:ir.model.fields,field_description:leather_inspection.field_leather_inspection__measured_area
+msgid "Measured Area"
+msgstr "Измерена площ"
+
+#. module: leather_inspection
+#: model_terms:ir.ui.view,arch_db:leather_inspection.leather_inspection_view_form
+#: model_terms:ir.ui.view,arch_db:leather_inspection.leather_inspection_view_list
+msgid "Measured area (m²)"
+msgstr "Измерена площ (м²)"
+
+#. module: leather_inspection
+#. odoo-python
+#: code:addons/leather_inspection/models/leather_inspection.py:0
+msgid "Measured area cannot be negative. Current value: %(value)s."
+msgstr "Измерената площ не може да е отрицателна. Текуща стойност: %(value)s."
+
+#. module: leather_inspection
+#. odoo-python
+#: code:addons/leather_inspection/models/leather_inspection.py:0
+msgid ""
+"Measured area must be greater than 0 %(unit)s before submission. Current "
+"value: %(value)s."
+msgstr ""
+"Измерената площ трябва да е по-голяма от 0 %(unit)s преди изпращане. Текуща "
+"стойност: %(value)s."
+
+#. module: leather_inspection
+#: model:ir.model.fields,field_description:leather_inspection.field_leather_inspection__message_has_error
+msgid "Message Delivery error"
+msgstr "Грешка при доставката на съобщение"
+
+#. module: leather_inspection
+#: model:ir.model.fields,field_description:leather_inspection.field_leather_inspection__message_ids
+msgid "Messages"
+msgstr "Съобщения"
+
+#. module: leather_inspection
+#: model:product.template,name:leather_inspection.product_zipper
+msgid "Metal zipper"
+msgstr "Метален цип"
+
+#. module: leather_inspection
+#: model:res.groups,name:leather_inspection.group_leather_inspection_operator
+msgid "Module Operator"
+msgstr "Оператор на модула"
+
+#. module: leather_inspection
+#: model:ir.model.fields,field_description:leather_inspection.field_leather_inspection__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "Краен срок за моята дейност"
+
+#. module: leather_inspection
+#: model_terms:ir.ui.view,arch_db:leather_inspection.leather_inspection_view_search
+msgid "My Assigned Inspections"
+msgstr "Възложените на мен инспекции"
+
+#. module: leather_inspection
+#. odoo-python
+#: code:addons/leather_inspection/models/leather_inspection.py:0
+msgid "New"
+msgstr "Нов"
+
+#. module: leather_inspection
+#: model:ir.model.fields,field_description:leather_inspection.field_leather_inspection__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "Краен срок на следващо действие"
+
+#. module: leather_inspection
+#: model:ir.model.fields,field_description:leather_inspection.field_leather_inspection__activity_summary
+msgid "Next Activity Summary"
+msgstr "Обобщение на следваща дейност"
+
+#. module: leather_inspection
+#: model:ir.model.fields,field_description:leather_inspection.field_leather_inspection__activity_type_id
+msgid "Next Activity Type"
+msgstr "Вид на следващо действие"
+
+#. module: leather_inspection
+#: model:res.groups.privilege,placeholder:leather_inspection.res_groups_privilege_leather_inspection
+msgid "No"
+msgstr "Не"
+
+#. module: leather_inspection
+#: model_terms:ir.actions.act_window,help:leather_inspection.action_leather_inspection
+msgid "No leather inspections yet"
+msgstr "Все още няма инспекции на кожа"
+
+#. module: leather_inspection
+#: model:ir.model.fields,field_description:leather_inspection.field_leather_inspection__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Брой действия"
+
+#. module: leather_inspection
+#: model:ir.model.fields,field_description:leather_inspection.field_leather_inspection__message_has_error_counter
+msgid "Number of errors"
+msgstr "Брой грешки"
+
+#. module: leather_inspection
+#: model:ir.model.fields,help:leather_inspection.field_leather_inspection__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "Брой съобщения, изискващи действие"
+
+#. module: leather_inspection
+#: model:ir.model.fields,help:leather_inspection.field_leather_inspection__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Брой съобщения с грешка при доставка"
+
+#. module: leather_inspection
+#. odoo-python
+#: code:addons/leather_inspection/models/quality_check.py:0
+msgid ""
+"Only a leather inspection operator or administrator can open the inspection "
+"from this check."
+msgstr ""
+"Само оператор или администратор на инспекцията на кожа може да отвори "
+"инспекцията от тази проверка."
+
+#. module: leather_inspection
+#. odoo-python
+#: code:addons/leather_inspection/models/leather_inspection.py:0
+msgid ""
+"Only a leather inspection operator or administrator can perform this action."
+msgstr ""
+"Само оператор или администратор на инспекцията на кожа може да извърши това "
+"действие."
+
+#. module: leather_inspection
+#. odoo-python
+#: code:addons/leather_inspection/models/leather_inspection.py:0
+msgid "Only the assigned data-entry user can submit this inspection."
+msgstr ""
+"Само възложеният потребител за въвеждане на данни може да изпрати тази "
+"инспекция."
+
+#. module: leather_inspection
+#: model_terms:ir.ui.view,arch_db:leather_inspection.leather_inspection_view_form
+msgid "Plain-text notes about defects"
+msgstr "Обикновен текст за дефектите"
+
+#. module: leather_inspection
+#: model:product.template,name:leather_inspection.product_pouch
+msgid "Pouch"
+msgstr "Несесер"
+
+#. module: leather_inspection
+#: model:ir.model.fields,field_description:leather_inspection.field_leather_inspection__product_id
+#: model_terms:ir.ui.view,arch_db:leather_inspection.leather_inspection_view_search
+msgid "Product"
+msgstr "Продукт"
+
+#. module: leather_inspection
+#: model:ir.model,name:leather_inspection.model_quality_check
+#: model:ir.model.fields,field_description:leather_inspection.field_leather_inspection__quality_check_id
+#: model:ir.model.fields,field_description:leather_inspection.field_leather_inspection__quality_check_label
+msgid "Quality Check"
+msgstr "Проверка на качеството"
+
+#. module: leather_inspection
+#. odoo-python
+#: code:addons/leather_inspection/models/leather_inspection.py:0
+msgid "Quality check %(check)s belongs to %(check_company)s, not %(company)s."
+msgstr ""
+"Проверката на качеството %(check)s е към %(check_company)s, а не към "
+"%(company)s."
+
+#. module: leather_inspection
+#. odoo-python
+#: code:addons/leather_inspection/models/leather_inspection.py:0
+msgid "Quality check %(check)s must be linked to an incoming receipt."
+msgstr ""
+"Проверката на качеството %(check)s трябва да е свързана с входящо "
+"получаване."
+
+#. module: leather_inspection
+#: model:ir.model.fields,field_description:leather_inspection.field_leather_inspection__picking_id
+#: model:ir.model.fields,field_description:leather_inspection.field_leather_inspection__picking_label
+#: model_terms:ir.ui.view,arch_db:leather_inspection.leather_inspection_view_list
+msgid "Receipt"
+msgstr "Получаване"
+
+#. module: leather_inspection
+#. odoo-python
+#: code:addons/leather_inspection/models/leather_inspection.py:0
+msgid "Receipt %(picking)s belongs to %(picking_company)s, not %(company)s."
+msgstr ""
+"Получаването %(picking)s е към %(picking_company)s, а не към %(company)s."
+
+#. module: leather_inspection
+#. odoo-python
+#: code:addons/leather_inspection/models/leather_inspection.py:0
+msgid "Receipt %(picking)s is not an incoming receipt."
+msgstr "Получаването %(picking)s не е входящо получаване."
+
+#. module: leather_inspection
+#: model:ir.model.fields,field_description:leather_inspection.field_leather_inspection__move_line_id
+msgid "Receipt Move Line"
+msgstr "Ред от получаването"
+
+#. module: leather_inspection
+#: model:ir.model.fields,field_description:leather_inspection.field_leather_inspection__name
+#: model_terms:ir.ui.view,arch_db:leather_inspection.leather_inspection_view_form
+#: model_terms:ir.ui.view,arch_db:leather_inspection.leather_inspection_view_list
+#: model_terms:ir.ui.view,arch_db:leather_inspection.leather_inspection_view_search
+msgid "Reference"
+msgstr "Референция"
+
+#. module: leather_inspection
+#: model:ir.model.fields.selection,name:leather_inspection.selection__leather_inspection__grade__reject
+msgid "Reject"
+msgstr "Брак"
+
+#. module: leather_inspection
+#: model:ir.model.fields,help:leather_inspection.field_leather_inspection__zero_usable_confirmed
+msgid ""
+"Required on submission when usable area is 0 m², so a default zero is not "
+"stored as a measurement."
+msgstr ""
+"Задължително при изпращане, когато използваемата площ е 0 м², за да не се "
+"запише нула по подразбиране като измерване."
+
+#. module: leather_inspection
+#: model:ir.model.fields,field_description:leather_inspection.field_leather_inspection__activity_user_id
+msgid "Responsible User"
+msgstr "Отговорник"
+
+#. module: leather_inspection
+#: model:ir.model,name:leather_inspection.model_leather_inspection_return_wizard
+msgid "Return Leather Inspection for Correction"
+msgstr "Връщане на инспекция на кожа за корекция"
+
+#. module: leather_inspection
+#: model:ir.model.fields,field_description:leather_inspection.field_leather_inspection__return_reason
+msgid "Return Reason"
+msgstr "Причина за връщане"
+
+#. module: leather_inspection
+#. odoo-python
+#: code:addons/leather_inspection/models/leather_inspection.py:0
+#: model_terms:ir.ui.view,arch_db:leather_inspection.leather_inspection_return_wizard_view_form
+#: model_terms:ir.ui.view,arch_db:leather_inspection.leather_inspection_view_form
+msgid "Return for Correction"
+msgstr "Върни за корекция"
+
+#. module: leather_inspection
+#: model_terms:ir.ui.view,arch_db:leather_inspection.leather_inspection_view_form
+msgid "Review"
+msgstr "Преглед"
+
+#. module: leather_inspection
+#: model:ir.model.fields,field_description:leather_inspection.field_leather_inspection__review_date
+msgid "Review Time"
+msgstr "Час на прегледа"
+
+#. module: leather_inspection
+#: model:ir.model.fields,field_description:leather_inspection.field_leather_inspection__reviewer_id
+msgid "Reviewer"
+msgstr "Прегледал"
+
+#. module: leather_inspection
+#: model:ir.model.fields,field_description:leather_inspection.field_leather_inspection__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "Грешка при доставка на SMS"
+
+#. module: leather_inspection
+#: model:res.groups,comment:leather_inspection.group_leather_inspection_admin
+msgid ""
+"Same inspection workflow as the module operator, plus delete. User accounts "
+"are still managed with Administration / Settings."
+msgstr ""
+"Същият процес като оператора на модула, плюс изтриване. Потребителските "
+"акаунти продължават да се управляват от Администриране / Настройки."
+
+#. module: leather_inspection
+#: model:res.groups,comment:leather_inspection.group_leather_inspection_data_entry
+msgid ""
+"Sees and edits only inspections assigned to them. Cannot create or delete "
+"inspections, and is not an inventory user."
+msgstr ""
+"Вижда и редактира само инспекциите, възложени на него. Не може да създава "
+"или изтрива инспекции и няма достъп до склада."
+
+#. module: leather_inspection
+#: model:res.groups,comment:leather_inspection.group_leather_inspection_operator
+msgid ""
+"Sees in-company inspections, assigns data-entry users, and reviews "
+"submissions. Inventory read comes from Inventory / User, not from a custom "
+"stock rule."
+msgstr ""
+"Вижда инспекциите на фирмата, възлага потребители за въвеждане на данни и "
+"преглежда изпратените. Достъпът за четене на склада идва от Склад / "
+"Потребител, а не от отделно складово правило."
+
+#. module: leather_inspection
+#: model:ir.model.fields,field_description:leather_inspection.field_leather_inspection__shade
+msgid "Shade"
+msgstr "Нюанс"
+
+#. module: leather_inspection
+#: model:ir.model.fields,field_description:leather_inspection.field_leather_inspection__state
+#: model_terms:ir.ui.view,arch_db:leather_inspection.leather_inspection_view_search
+msgid "Status"
+msgstr "Състояние"
+
+#. module: leather_inspection
+#: model:ir.model.fields,help:leather_inspection.field_leather_inspection__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"Статус според дейностите\n"
+"Пресрочени: Крайната дата е в миналото\n"
+"Днес: Дейности с дата на изпълнение днес \n"
+"Планирани: Бъдещи дейности."
+
+#. module: leather_inspection
+#: model:product.template,name:leather_inspection.product_strap
+msgid "Strap"
+msgstr "Каишка"
+
+#. module: leather_inspection
+#. odoo-python
+#: code:addons/leather_inspection/models/leather_inspection.py:0
+#: model_terms:ir.ui.view,arch_db:leather_inspection.leather_inspection_view_form
+msgid "Submit for Review"
+msgstr "Изпрати за преглед"
+
+#. module: leather_inspection
+#: model:ir.model.fields.selection,name:leather_inspection.selection__leather_inspection__state__submitted
+#: model_terms:ir.ui.view,arch_db:leather_inspection.leather_inspection_view_search
+msgid "Submitted"
+msgstr "Изпратена"
+
+#. module: leather_inspection
+#. odoo-python
+#: code:addons/leather_inspection/models/leather_inspection.py:0
+msgid ""
+"The move line on quality check %(check)s is for lot %(line_lot)s, not "
+"%(lot)s."
+msgstr ""
+"Редът от движението на проверка %(check)s е за партида %(line_lot)s, а не за"
+" %(lot)s."
+
+#. module: leather_inspection
+#. odoo-python
+#: code:addons/leather_inspection/models/leather_inspection.py:0
+msgid ""
+"The move line on quality check %(check)s is for product %(line_product)s, "
+"not %(product)s."
+msgstr ""
+"Редът от движението на проверка %(check)s е за продукт %(line_product)s, а "
+"не за %(product)s."
+
+#. module: leather_inspection
+#. odoo-python
+#: code:addons/leather_inspection/models/leather_inspection.py:0
+msgid ""
+"The move line on quality check %(check)s is not on receipt %(picking)s."
+msgstr ""
+"Редът от движението на проверка %(check)s не е към получаване %(picking)s."
+
+#. module: leather_inspection
+#. odoo-python
+#: code:addons/leather_inspection/models/leather_inspection.py:0
+msgid "The quality check and the leather lot have no product."
+msgstr "Проверката на качеството и партидата кожа нямат продукт."
+
+#. module: leather_inspection
+#. odoo-python
+#: code:addons/leather_inspection/models/leather_inspection.py:0
+msgid ""
+"This %(verb)s was rejected because it includes fields that cannot be changed"
+" directly: %(fields)s. No fields were updated."
+msgstr ""
+"Това %(verb)s е отхвърлено, защото включва полета, които не могат да се "
+"променят директно: %(fields)s. Нито едно поле не е обновено."
+
+#. module: leather_inspection
+#: model:ir.model.fields,help:leather_inspection.field_leather_inspection__measured_area
+msgid "Total measured hide area in m². This is not a stock quantity."
+msgstr "Обща измерена площ на кожата в м². Това не е складово количество."
+
+#. module: leather_inspection
+#: model:ir.model.fields,help:leather_inspection.field_leather_inspection__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "Вид на изключение на дейност в базата."
+
+#. module: leather_inspection
+#: model:ir.model.fields,field_description:leather_inspection.field_leather_inspection__usable_area
+msgid "Usable Area"
+msgstr "Използваема площ"
+
+#. module: leather_inspection
+#. odoo-python
+#: code:addons/leather_inspection/models/leather_inspection.py:0
+msgid "Usable area (%(usable)s) cannot exceed measured area (%(measured)s)."
+msgstr ""
+"Използваемата площ (%(usable)s) не може да надвишава измерената "
+"(%(measured)s)."
+
+#. module: leather_inspection
+#: model_terms:ir.ui.view,arch_db:leather_inspection.leather_inspection_view_form
+#: model_terms:ir.ui.view,arch_db:leather_inspection.leather_inspection_view_list
+msgid "Usable area (m²)"
+msgstr "Използваема площ (м²)"
+
+#. module: leather_inspection
+#. odoo-python
+#: code:addons/leather_inspection/models/leather_inspection.py:0
+msgid "Usable area cannot be negative. Current value: %(value)s."
+msgstr ""
+"Използваемата площ не може да е отрицателна. Текуща стойност: %(value)s."
+
+#. module: leather_inspection
+#. odoo-python
+#: code:addons/leather_inspection/models/leather_inspection.py:0
+msgid ""
+"Usable area is %(value)s. Confirm that zero usable area is intentional "
+"before submission."
+msgstr ""
+"Използваемата площ е %(value)s. Потвърдете, че нулевата използваема площ е "
+"умишлена, преди изпращане."
+
+#. module: leather_inspection
+#: model:ir.model.fields,help:leather_inspection.field_leather_inspection__usable_area
+msgid "Usable hide area in m². This is not a stock quantity."
+msgstr "Използваема площ на кожата в м². Това не е складово количество."
+
+#. module: leather_inspection
+#. odoo-python
+#: code:addons/leather_inspection/models/leather_inspection.py:0
+msgid "User %(user)s is not in company %(company)s."
+msgstr "Потребител %(user)s не е във фирма %(company)s."
+
+#. module: leather_inspection
+#: model:product.template,name:leather_inspection.product_wallet
+msgid "Wallet"
+msgstr "Портфейл"
+
+#. module: leather_inspection
+#: model:product.template,name:leather_inspection.product_thread
+msgid "Waxed thread"
+msgstr "Восъчна нишка"
+
+#. module: leather_inspection
+#: model_terms:ir.ui.view,arch_db:leather_inspection.leather_inspection_return_wizard_view_form
+msgid "What needs to be corrected?"
+msgstr "Какво трябва да се коригира?"
+
+#. module: leather_inspection
+#: model:ir.model.fields,field_description:leather_inspection.field_leather_inspection__zero_usable_confirmed
+msgid "Zero usable area confirmed"
+msgstr "Потвърдена е нулева използваема площ"
+
+#. module: leather_inspection
+#. odoo-python
+#: code:addons/leather_inspection/models/leather_inspection.py:0
+msgid "create"
+msgstr "създаване"
+
+#. module: leather_inspection
+#. odoo-python
+#: code:addons/leather_inspection/models/leather_inspection.py:0
+msgid "write"
+msgstr "записване"
+
+#. module: leather_inspection
+#. odoo-python
+#: code:addons/leather_inspection/models/leather_inspection.py:0
+msgid "Bulgarian (bg_BG) is not available on this database."
+msgstr "Българският език (bg_BG) не е наличен в тази база."

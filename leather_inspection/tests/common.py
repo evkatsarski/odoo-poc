@@ -19,22 +19,27 @@ class LeatherInspectionCommon(TransactionCase):
         cls.entry_a = new_test_user(
             cls.env, 'entry_a',
             groups='leather_inspection.group_leather_inspection_data_entry',
+            lang='en_US',
         )
         cls.entry_b = new_test_user(
             cls.env, 'entry_b',
             groups='leather_inspection.group_leather_inspection_data_entry',
+            lang='en_US',
         )
         cls.operator = new_test_user(
             cls.env, 'leather_op',
             groups='leather_inspection.group_leather_inspection_operator',
+            lang='en_US',
         )
         cls.admin = new_test_user(
             cls.env, 'leather_adm',
             groups='leather_inspection.group_leather_inspection_admin',
+            lang='en_US',
         )
         cls.maker = new_test_user(
             cls.env, 'leather_maker',
             groups='mrp.group_mrp_user,stock.group_production_lot',
+            lang='en_US',
         )
         cls.bom = cls.env['mrp.bom'].create({
             'product_tmpl_id': cls.bag.product_tmpl_id.id,

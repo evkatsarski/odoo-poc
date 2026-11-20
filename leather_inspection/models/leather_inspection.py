@@ -589,3 +589,54 @@ class LeatherInspection(models.Model):
             'review_date': fields.Datetime.now(),
         })
         return True
+
+    # -------------------------------------------------------------------------
+    # Languages
+    # -------------------------------------------------------------------------
+
+    @api.model
+    def _setup_languages(self):
+        """Load English and Bulgarian, then make Bulgarian the company default.
+
+        English stays installed. Demo users are switched when they already
+        exist; the install hook creates them afterwards in Bulgarian.
+        """
+        self._activate_languages()
+        self._assign_bulgarian_defaults()
+
+    @api.model
+    def _activate_languages(self):
+        Lang = self.env['res.lang'].sudo().with_context(active_test=False)
+        english = Lang.search([('code', '=', 'en_US')], limit=1)
+        bulgarian = Lang.search([('code', '=', 'bg_BG')], limit=1)
+        if not bulgarian:
+            raise UserError(_('Bulgarian (bg_BG) is not available on this database.'))
+        if english and not english.active:
+            english.action_unarchive()
+        if not bulgarian.active:
+            # Loads translations for modules that are already installed.
+            # This module's own file is loaded below, including while it is
+            # still 'to install' or 'to upgrade'.
+            bulgarian.action_unarchive()
+        module = self.env['ir.module.module'].sudo().search([
+            ('name', '=', 'leather_inspection'),
+        ], limit=1)
+        if module:
+            module._update_translations(['bg_BG'], overwrite=True)
+
+    @api.model
+    def _assign_bulgarian_defaults(self):
+        self.env['ir.default'].set('res.partner', 'lang', 'bg_BG')
+        companies = self.env['res.company'].sudo().search([])
+        partners = companies.partner_id.filtered(lambda partner: partner.lang != 'bg_BG')
+        if partners:
+            partners.write({'lang': 'bg_BG'})
+        for xmlid in (
+            'leather_inspection.user_entry_a',
+            'leather_inspection.user_entry_b',
+            'leather_inspection.user_operator',
+            'leather_inspection.user_admin',
+        ):
+            user = self.env.ref(xmlid, raise_if_not_found=False)
+            if user and user.lang != 'bg_BG':
+                user.sudo().write({'lang': 'bg_BG'})

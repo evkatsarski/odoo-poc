@@ -1,6 +1,6 @@
 {
     'name': 'Leather Inspection',
-    'version': '20.0.1.0.0',
+    'version': '20.0.1.1.0',
     'category': 'Supply Chain/Quality',
     'summary': 'Incoming leather lot inspection for a luxury leather-goods workshop',
     'description': """
@@ -24,6 +24,7 @@ post stock, rewrite lot quantities, consume leather, or pass the quality check.
         'views/leather_inspection_wizards.xml',
         'views/quality_check_views.xml',
         'views/menus.xml',
+        'data/language.xml',
     ],
     'assets': {
         'web.assets_tests': [

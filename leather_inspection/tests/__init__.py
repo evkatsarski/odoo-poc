@@ -5,3 +5,4 @@ from . import test_roles
 from . import test_transitions
 from . import test_stock
 from . import test_browser
+from . import test_languages

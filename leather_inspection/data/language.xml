@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Last data file, so view terms exist before Bulgarian translations load.
+         Runs on install and on every update. English stays active. -->
+    <function model="leather.inspection" name="_setup_languages"/>
+</odoo>

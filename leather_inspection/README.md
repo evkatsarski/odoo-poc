@@ -33,6 +33,10 @@ Odoo 20 stores both ACLs and record rules on `ir.access`. The CSV header is `id,
 
 Demo logins created on install, password `leather-demo`: `leather.entry.a`, `leather.entry.b`, `leather.operator`, `leather.admin`.
 
+## Languages
+
+English (`en_US`) and Bulgarian (`bg_BG`) are both installed. Bulgarian is the default language of every company, of new contacts, and of the four demo users. English stays installed. A user changes it from My Preferences. Addon labels and messages are in `i18n/bg.po`.
+
 ## Area
 
 Decimal precision `Leather Area`, 3 digits, half-up.

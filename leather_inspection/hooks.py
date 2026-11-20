@@ -7,6 +7,10 @@ DEMO_PASSWORD = 'leather-demo'
 def post_init_hook(env):
     """Load one receipt, one quality check, one inspection, the demo bag BoM, and role users.
 
+    Bulgarian is activated from data before this hook, so the new users can
+    be created in that language. This hook sets the company and those users
+    again once the accounts exist.
+
     The receipt is a normal stock operation used as master data. Creating it is
     not an inspection action.
     """
@@ -22,6 +26,7 @@ def post_init_hook(env):
         _ensure_user(env, xmlid, name, login, group_xmlid, company)
 
     _ensure_demo_bom(env)
+    env['leather.inspection']._assign_bulgarian_defaults()
     if env.ref('leather_inspection.inspection_representative', raise_if_not_found=False):
         return
 
@@ -67,6 +72,7 @@ def _ensure_user(env, xmlid, name, login, group_xmlid, company):
         'email': f'{login}@example.com',
         'company_id': company.id,
         'company_ids': [Command.link(company.id)],
+        'lang': 'bg_BG',
         'group_ids': [Command.set([
             env.ref('base.group_user').id,
             env.ref(group_xmlid).id,
