@@ -4,7 +4,7 @@
         <field name="name">leather.inspection.list</field>
         <field name="model">leather.inspection</field>
         <field name="arch" type="xml">
-            <list string="Leather Inspections" class="o_leather_inspection_list" create="1" sample="0">
+            <list string="Leather Inspections" class="o_leather_inspection_list o_kroy_catalog" create="1" sample="0">
                 <field name="name" string="Reference"/>
                 <field name="product_id"/>
                 <field name="lot_label" string="Lot"/>
@@ -47,11 +47,14 @@
                         statusbar_visible="draft,assigned,submitted,approved"/>
                 </header>
                 <sheet>
+                    <div class="o_kroy_sheet_brand">
+                        <img src="/leather_inspection/static/src/img/kroy-mark.png" alt="KROY" class="o_kroy_mark"/>
+                    </div>
                     <div class="oe_title">
                         <label for="name"/>
                         <h1><field name="name" readonly="1"/></h1>
                     </div>
-                    <group string="Reference">
+                    <group string="Reference" class="o_kroy_material">
                         <group>
                             <field name="product_id" readonly="1"/>
                             <field name="lot_id" readonly="1"

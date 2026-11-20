@@ -4,7 +4,7 @@
         <field name="name">leather.inspection.assign.wizard.form</field>
         <field name="model">leather.inspection.assign.wizard</field>
         <field name="arch" type="xml">
-            <form string="Assign">
+            <form string="Assign" class="o_kroy_wizard">
                 <group>
                     <field name="inspection_id"/>
                     <field name="allowed_user_ids" invisible="1"/>
@@ -22,7 +22,7 @@
         <field name="name">leather.inspection.return.wizard.form</field>
         <field name="model">leather.inspection.return.wizard</field>
         <field name="arch" type="xml">
-            <form string="Return for Correction">
+            <form string="Return for Correction" class="o_kroy_wizard">
                 <group>
                     <field name="inspection_id"/>
                     <field name="reason" placeholder="What needs to be corrected?"/>

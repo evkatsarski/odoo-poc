@@ -1,0 +1,173 @@
+// KROY surfaces. Espresso is primary text and controls. Ivory is the light
+// background. Cognac marks product materials and packaging. Olive is the
+// secondary accent for series, inserts, and secondary buttons.
+// Loaded after the web bundle so these rules win over compiled defaults.
+
+$o-kroy-espresso: #281C17;
+$o-kroy-cognac: #A35935;
+$o-kroy-ivory: #F2E9DC;
+$o-kroy-olive: #596253;
+
+.o_main_navbar {
+    background: $o-kroy-espresso;
+    color: $o-kroy-ivory;
+    --NavBar-entry-color: #{$o-kroy-ivory};
+    --NavBar-entry-color--hover: #{$o-kroy-ivory};
+    --NavBar-brand-color: #{$o-kroy-ivory};
+    --NavBar-entry-backgroundColor: #{$o-kroy-espresso};
+    --NavBar-entry-backgroundColor--hover: #{$o-kroy-cognac};
+    --NavBar-entry-backgroundColor--active: #{$o-kroy-olive};
+}
+
+.o_kroy_navbar_logo {
+    display: flex;
+    align-items: center;
+    flex: 0 0 auto;
+    margin-inline: 0.35rem 0.15rem;
+    height: 100%;
+
+    img {
+        display: block;
+        height: 28px;
+        width: auto;
+    }
+}
+
+.btn-primary,
+.oe_highlight {
+    --bs-btn-bg: #{$o-kroy-espresso};
+    --bs-btn-border-color: #{$o-kroy-espresso};
+    --bs-btn-color: #{$o-kroy-ivory};
+    --bs-btn-hover-bg: #{$o-kroy-cognac};
+    --bs-btn-hover-border-color: #{$o-kroy-cognac};
+    --bs-btn-hover-color: #{$o-kroy-ivory};
+    --bs-btn-active-bg: #{$o-kroy-espresso};
+    --bs-btn-active-border-color: #{$o-kroy-espresso};
+    --bs-btn-active-color: #{$o-kroy-ivory};
+    --bs-btn-disabled-bg: #{$o-kroy-espresso};
+    --bs-btn-disabled-border-color: #{$o-kroy-espresso};
+    --bs-btn-disabled-color: #{$o-kroy-ivory};
+    background-color: $o-kroy-espresso;
+    border-color: $o-kroy-espresso;
+    color: $o-kroy-ivory;
+
+    &:hover,
+    &:focus {
+        background-color: $o-kroy-cognac;
+        border-color: $o-kroy-cognac;
+        color: $o-kroy-ivory;
+    }
+}
+
+.btn-secondary {
+    --bs-btn-bg: #{$o-kroy-olive};
+    --bs-btn-border-color: #{$o-kroy-olive};
+    --bs-btn-color: #{$o-kroy-ivory};
+    --bs-btn-hover-bg: #{$o-kroy-espresso};
+    --bs-btn-hover-border-color: #{$o-kroy-espresso};
+    --bs-btn-hover-color: #{$o-kroy-ivory};
+    --bs-btn-active-bg: #{$o-kroy-olive};
+    --bs-btn-active-border-color: #{$o-kroy-olive};
+    --bs-btn-active-color: #{$o-kroy-ivory};
+    background-color: $o-kroy-olive;
+    border-color: $o-kroy-olive;
+    color: $o-kroy-ivory;
+
+    &:hover,
+    &:focus {
+        background-color: $o-kroy-espresso;
+        border-color: $o-kroy-espresso;
+        color: $o-kroy-ivory;
+    }
+}
+
+body.o_kroy_login,
+body:has(.o_kroy_login_card) {
+    background-color: $o-kroy-ivory !important;
+    color: $o-kroy-espresso;
+}
+
+.o_kroy_login_card {
+    background-color: $o-kroy-ivory !important;
+    color: $o-kroy-espresso;
+    outline: 1px solid $o-kroy-olive;
+
+    .form-label,
+    .form-control,
+    label {
+        color: $o-kroy-espresso;
+        background-color: $o-kroy-ivory;
+    }
+
+    a {
+        color: $o-kroy-cognac;
+    }
+}
+
+.o_kroy_login_logo .o_kroy_mark {
+    max-height: 120px;
+    width: auto;
+}
+
+// Reserved band. Shown only while the company logo is still the default,
+// because the login template then omits the image.
+.o_kroy_logo_slot {
+    min-height: 96px;
+    margin-bottom: 1.5rem;
+    background: $o-kroy-ivory;
+    border-bottom: 1px solid $o-kroy-olive;
+}
+
+.o_leather_inspection_form,
+.o_kroy_catalog,
+.o_kroy_wizard {
+    background-color: $o-kroy-ivory;
+    color: $o-kroy-espresso;
+}
+
+.o_leather_inspection_form {
+    .o_form_sheet,
+    .o_form_sheet_bg {
+        background-color: $o-kroy-ivory;
+        color: $o-kroy-espresso;
+        // Olive is the secondary accent. The inspection has no series or insert
+        // field, so the sheet carries that accent as its top rule.
+        border-top: 3px solid $o-kroy-olive;
+    }
+
+    .o_form_label {
+        color: $o-kroy-espresso;
+        background-color: $o-kroy-ivory;
+    }
+
+    a {
+        color: $o-kroy-cognac;
+    }
+
+    .o_kroy_sheet_brand {
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 0.5rem;
+
+        .o_kroy_mark {
+            display: block;
+            height: 72px;
+            width: auto;
+        }
+    }
+
+    // The product on an inspection is the hide. Packaging uses this same accent;
+    // the form has no separate packaging field.
+    .o_kroy_material {
+        border-inline-start: 3px solid $o-kroy-cognac;
+        padding-inline-start: 0.75rem;
+    }
+}
+
+.o_kroy_catalog {
+    .o_list_renderer,
+    .o_list_table {
+        background-color: $o-kroy-ivory;
+        color: $o-kroy-espresso;
+    }
+}

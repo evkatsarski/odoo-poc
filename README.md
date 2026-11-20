@@ -59,7 +59,7 @@ Checked against this Community tree and the Odoo 20 Quality documentation. Enter
 - The quality-check form inherit is `quality_control.quality_check_view_form`, xpath `//header`. The operator menu parent is `quality_control.menu_quality_root`. The operator group implies `quality.group_quality_user`. Those xml ids are the long-standing Enterprise ids and were not re-read from Enterprise source here. If a 20.0 build renamed them, install stops on the missing xml id.
 - Data-entry users are not given Inventory. They cannot read `stock.lot` or `stock.picking`, so the form shows `lot_label`, `picking_label`, and `quality_check_label` instead of the links. Operators see the links.
 - Views use `<list>` and `<chatter/>`. Uniqueness is `models.Constraint` named `leather_inspection_company_check_lot_uniq` on `(company_id, quality_check_id, lot_id)`. A repeated create returns that row and does not overwrite measurements.
-- One company (`base.main_company` on a fresh database) and one warehouse (`stock.warehouse0`).
+- One company (`base.main_company` on a fresh database, named KROY by this addon) and one warehouse (`stock.warehouse0`).
 
 ## Demo data loaded by the addon
 

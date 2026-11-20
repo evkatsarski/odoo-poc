@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="login_layout_kroy" inherit_id="web.login_layout" name="KROY login">
+        <xpath expr="//t[@t-call='web.frontend_layout']" position="attributes">
+            <attribute name="body_classname.f">o_kroy_login bg-100</attribute>
+        </xpath>
+        <!-- The card class is t-attf-class, which hasclass() does not see. -->
+        <xpath expr="//div[contains(@t-attf-class, 'o_database_list')]" position="attributes">
+            <attribute name="t-attf-class" add="o_kroy_login_card" separator=" "/>
+        </xpath>
+        <xpath expr="//div[hasclass('text-center') and hasclass('border-bottom')]" position="attributes">
+            <attribute name="class" add="o_kroy_login_logo" separator=" "/>
+        </xpath>
+        <xpath expr="//img[contains(@t-attf-src, '/web/binary/company_logo')]" position="attributes">
+            <attribute name="alt">KROY</attribute>
+            <attribute name="class">o_kroy_mark</attribute>
+        </xpath>
+        <!-- Login hides the image while the company still has the default logo.
+             Keep the same band empty until the company logo can fill it. -->
+        <xpath expr="//div[hasclass('text-center') and hasclass('border-bottom')]" position="after">
+            <div class="o_kroy_logo_slot" t-if="res_company.uses_default_logo" role="img" aria-label="KROY"/>
+        </xpath>
+    </template>
+</odoo>

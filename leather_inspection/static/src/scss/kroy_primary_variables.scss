@@ -1,0 +1,27 @@
+// Prepended before Community (and Enterprise) primary variables.
+// Later assignments use !default, so these values stay in place.
+
+$o-kroy-espresso: #281C17;
+$o-kroy-cognac: #A35935;
+$o-kroy-ivory: #F2E9DC;
+$o-kroy-olive: #596253;
+
+$o-community-color: $o-kroy-espresso;
+$o-enterprise-color: $o-kroy-espresso;
+$o-enterprise-action-color: $o-kroy-cognac;
+
+$o-brand-odoo: $o-kroy-espresso;
+$o-brand-primary: $o-kroy-espresso;
+$o-brand-secondary: $o-kroy-olive;
+$o-action: $o-kroy-espresso;
+
+$o-main-text-color: $o-kroy-espresso;
+$o-main-headings-color: $o-kroy-espresso;
+$o-main-link-color: $o-kroy-cognac;
+$o-view-background-color: $o-kroy-ivory;
+
+$o-navbar-background: $o-kroy-espresso;
+$o-navbar-brand-color: $o-kroy-ivory;
+$o-navbar-entry-color: $o-kroy-ivory;
+$o-navbar-entry-color--hover: $o-kroy-ivory;
+$o-navbar-entry-bg--hover: $o-kroy-cognac;

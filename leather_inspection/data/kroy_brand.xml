@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Not noupdate: base.main_company is noupdate, so a record write is skipped on update. -->
+    <function model="res.company" name="_kroy_apply_brand"/>
+</odoo>
