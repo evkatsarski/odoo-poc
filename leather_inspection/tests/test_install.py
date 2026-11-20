@@ -52,6 +52,7 @@ class TestLeatherInspectionInstall(TransactionCase):
         extra = new_test_user(
             self.env, 'entry_update',
             groups='leather_inspection.group_leather_inspection_data_entry',
+            lang='en_US',
         )
         module = self.env['ir.module.module'].search([('name', '=', 'leather_inspection')])
         module.button_immediate_upgrade()
