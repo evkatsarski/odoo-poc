@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="leather_inspection.NavBar" t-inherit="web.NavBar" t-inherit-mode="extension">
+        <xpath expr="//t[@t-call='web.NavBar.AppsMenu']" position="after">
+            <div class="o_kroy_navbar_logo">
+                <img src="/leather_inspection/static/src/img/kroy-mark.png" alt="KROY"/>
+            </div>
+        </xpath>
+    </t>
+</templates>

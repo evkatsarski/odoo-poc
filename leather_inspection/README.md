@@ -1,10 +1,21 @@
 # leather_inspection
 
-Incoming leather inspection for Odoo 20. Technical name `leather_inspection`. Depends on `quality_control` (Enterprise) and `mrp`. Version `20.0.1.0.0`.
+Incoming leather inspection for Odoo 20. Technical name `leather_inspection`. Depends on `web`, `quality_control` (Enterprise), and `mrp`. Version `20.0.1.1.0`.
 
 Inspection actions update only `leather.inspection`. They do not post stock, change lot quantities, consume leather, or pass the quality check.
 
 The repository [README](../README.md) is the handover: setup script, POS recipe, Shopify blocker, and what was run. This file is the addon contract.
+
+## Brand
+
+The prototype company (`base.main_company`, and the current company when the install hook loads demo data) is named **KROY**. The mark is `static/src/img/kroy-mark.png`, cropped from the supplied board. It is not redrawn. The company logo is that file, so login (`/web/binary/company_logo`, only once the logo is no longer the default), PDF report headers, and an Enterprise home menu pick it up without editing Odoo. The backend navbar and the inspection form also show the same file. If the company logo is still the default, the login page keeps an empty band (`.o_kroy_logo_slot`) where the image would be.
+
+| Color | Hex | Where it is used |
+| --- | --- | --- |
+| Espresso | `#281C17` | Primary. Navbar, primary buttons, text, company `primary_color`. The mark itself is this color. |
+| Cognac | `#A35935` | Accent for product materials and packaging. Material group on the inspection form, primary-button hover, inspection links. |
+| Ivory | `#F2E9DC` | Light background. Login, form labels, inspection form, and the inspection list (the catalog). |
+| Olive | `#596253` | Secondary accent for series and inserts. Company `secondary_color`, secondary buttons, and the top rule of the inspection sheet. The inspection form has no series or insert field. |
 
 ## Workflow
 

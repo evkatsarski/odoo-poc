@@ -15,7 +15,9 @@ def post_init_hook(env):
     not an inspection action.
     """
     Inspection = env['leather.inspection']
+    # The demo company is the current company on a fresh database (base.main_company).
     company = env.company
+    company._kroy_write_brand()
     users = {
         'leather_inspection.user_entry_a': ('Leather Data Entry A', 'leather.entry.a', 'leather_inspection.group_leather_inspection_data_entry'),
         'leather_inspection.user_entry_b': ('Leather Data Entry B', 'leather.entry.b', 'leather_inspection.group_leather_inspection_data_entry'),
