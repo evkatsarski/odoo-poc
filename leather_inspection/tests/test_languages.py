@@ -43,3 +43,31 @@ class TestLeatherLanguages(TransactionCase):
             ),
             None,
         )
+
+        code_translations.web_translations.pop(('leather_inspection', 'bg_BG'), None)
+        web = code_translations.get_web_translations('leather_inspection', 'bg_BG')
+        messages = {message['id']: message['string'] for message in web['messages']}
+        self.assertEqual(messages['My Preferences'], 'Моите предпочитания')
+        self.assertEqual(messages['Shortcuts'], 'Клавишни комбинации')
+        self.assertEqual(messages['My Subscription'], 'Моят абонамент')
+        self.assertEqual(messages['Log note'], 'Запишете бележка')
+        self.assertEqual(messages['Yesterday at %(time)s'], 'Вчера в %(time)s')
+
+        preferences = self.env.ref('base.view_users_form_simple_modif')
+        bulgarian_arch = preferences.with_context(lang='bg_BG').arch
+        self.assertIn('Запазете предпочитанията', bulgarian_arch)
+        self.assertNotIn('Update Preferences', bulgarian_arch)
+        self.assertIn('Обновете я, ако е компрометирана.', bulgarian_arch)
+        self.assertIn('Свържете външни услуги.', bulgarian_arch)
+        self.assertIn('Проверете дали са ваши.', bulgarian_arch)
+        self.assertIn('API ключове', bulgarian_arch)
+        self.assertIn('Създайте API ключ', bulgarian_arch)
+        self.assertIn('Излезте от всички устройства', bulgarian_arch)
+        self.assertNotIn('вскички', bulgarian_arch)
+        english_arch = preferences.with_context(lang='en_US').arch
+        self.assertIn('Update Preferences', english_arch)
+
+        users = self.env['res.users'].with_context(lang='bg_BG')
+        selection = dict(users._fields['notification_type']._description_selection(users.env))
+        self.assertEqual(selection['email'], 'По имейл')
+        self.assertEqual(selection['inbox'], 'В Odoo')
